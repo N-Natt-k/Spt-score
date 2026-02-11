@@ -3,8 +3,10 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { AuthContext } from '../../App';
-import { db } from '../../firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { app } from '../../firebase';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+
+const db = getFirestore(app);
 
 interface Project {
   id: string;

@@ -2,8 +2,10 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../App';
-import { db } from '../../firebase';
-import { doc, getDoc } from "firebase/firestore";
+import { app } from '../../firebase';
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+
+const db = getFirestore(app);
 
 const StudentLoginPage: React.FC = () => {
   const [nationalId, setNationalId] = useState('');

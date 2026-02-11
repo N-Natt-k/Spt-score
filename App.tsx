@@ -9,8 +9,10 @@ import AdminProjectPage from './pages/admin/AdminProjectPage';
 import StudentLoginPage from './pages/student/StudentLoginPage';
 import StudentDashboardPage from './pages/student/StudentDashboardPage';
 import StudentProjectPage from './pages/student/StudentProjectPage';
-import { auth } from './firebase';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { app } from './firebase';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+
+const auth = getAuth(app);
 
 interface User {
   uid: string;

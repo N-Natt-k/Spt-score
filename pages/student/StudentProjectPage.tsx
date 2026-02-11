@@ -3,9 +3,11 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Award, BarChart2, TrendingUp, User as UserIcon, ChevronsLeft, Target, Star, BookOpen } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { db } from '../../firebase';
-import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
+import { app } from '../../firebase';
+import { getFirestore, doc, getDoc, collection, getDocs } from 'firebase/firestore';
 import { AuthContext } from '../../App';
+
+const db = getFirestore(app);
 
 const StatCard: React.FC<{ icon: React.ReactNode; label: string; value: string; color: string }> = ({ icon, label, value, color }) => (
     <div className={`flex items-center p-4 bg-white rounded-xl shadow-soft`}>

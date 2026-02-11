@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PlusCircle, Settings, Users, ArrowRight } from 'lucide-react';
-import { db } from '../../firebase';
-import { collection, getDocs, getCountFromServer } from 'firebase/firestore';
+import { app } from '../../firebase';
+import { getFirestore, collection, getDocs, getCountFromServer } from 'firebase/firestore';
+
+const db = getFirestore(app);
 
 interface Project {
   id: string;

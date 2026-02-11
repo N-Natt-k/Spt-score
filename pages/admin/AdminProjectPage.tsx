@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronsLeft, Edit, Trash2, UserPlus, Upload, Download, Eye, EyeOff, ClipboardPaste, ListOrdered, BarChartHorizontalBig } from 'lucide-react';
-import { db } from '../../firebase';
-import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
+import { app } from '../../firebase';
+import { getFirestore, doc, getDoc, collection, getDocs } from 'firebase/firestore';
+
+const db = getFirestore(app);
 
 interface Student {
     id: string;
