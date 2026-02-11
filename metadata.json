@@ -1,0 +1,5 @@
+{
+  "name": "Score Admissions Satri Phatthalung School",
+  "description": "A web application for checking admission scores for Satri Phatthalung School, with separate portals for students and administrators.",
+  "requestFramePermissions": []
+}
